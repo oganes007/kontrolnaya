@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+<title>kontrolnaya</title>
+</head>
+<body>
+<h1>Тест</h1>
+ФИО:<input type="text" size = 20>
+<p>Вопрос № 1. На какой картинке указан белый кот?( 1 или 2)</p>
+<img src="wcat.jpeg">
+<img src="bcat.jpeg">
+<br>
+<input type="text" id = "v_1">
+<p>Вопрос №2. Сколько букв в Англиском алфавите?<p>
+<input type="text" id = "v_2">
+<p>Вопрос №3. Сколько букв в Русском алфавите?</p>
+<input type="text" id = "v_3">
+<br>
+<br>
+<button onclick="proverit();">Проверить</button>
+<div id="rezultat"></div>
+<script>
+function proverit(){
+protv1 = 1;
+protv2 = 26;
+protv3 = 33;
+otv1 = document.getElementById('v_1').value;
+otv2 = document.getElementById('v_2').value;
+otv3 = document.getElementById('v_3').value;
+ball = 0;
+if(otv1 == protv1){
+ball +=1;
+}
+if(otv2 == protv2){
+ball +=1;
+}
+if(otv3 == protv3){
+ball +=1;
+}
+vsego_zadach = 3;
+procent = ball/vsego_zadach * 100;
+document.getElementById('rezultat').innerHTML = "Ваши баллы " + procent;
+}
+</script>
+</body>
+</html>
